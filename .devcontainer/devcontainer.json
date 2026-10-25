@@ -1,0 +1,34 @@
+{
+  "name": "Flipper Zero template",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11",
+      "installTools": true
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false,
+      "username": "root",
+      "upgradePackages": true
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "twxs.cmake",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.live-server"
+      ],
+      "settings": {
+        "C_Cpp.default.compilerPath": "/root/.ufbt/toolchain/bin/arm-none-eabi-gcc",
+        "C_Cpp.default.cStandard": "gnu11",
+        "C_Cpp.default.cppStandard": "gnu++17",
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+      }
+    }
+  },
+  "postCreateCommand": "python3 -m pip install --upgrade pip ufbt && ufbt update",
+  "remoteUser": "root"
+}
