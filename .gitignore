@@ -1,0 +1,9 @@
+# Flipper build outputs
+build/
+dist/
+*.fap
+*.elf
+*.map
+*.o
+*.d
+compile_commands.json
