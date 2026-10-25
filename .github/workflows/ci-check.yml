@@ -1,0 +1,19 @@
+name: Validate devcontainer
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check-devcontainer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install Dev Containers CLI
+        run: npm install -g @devcontainers/cli
+
+      - name: Validate devcontainer config
+        run: devcontainer read-configuration --workspace-folder .
