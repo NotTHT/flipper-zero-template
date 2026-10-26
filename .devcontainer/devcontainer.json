@@ -4,12 +4,12 @@
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.11",
-      "installTools": true
+      "installTools": false
     },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": false,
       "username": "root",
-      "upgradePackages": true
+      "upgradePackages": false
     }
   },
   "customizations": {
@@ -29,6 +29,6 @@
       }
     }
   },
-  "postCreateCommand": "python3 -m pip install --upgrade pip ufbt && ufbt update",
+  "postCreateCommand": "python3 -m pip install ufbt && ufbt update",
   "remoteUser": "root"
 }
